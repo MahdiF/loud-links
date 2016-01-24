@@ -37,7 +37,7 @@ Or add the class **“loud-link-click”** to any link/element that you want to 
 Add the attribute **“src-data”** to the element & write in it the name of your sound without the extension.
 
 ```html
-<div class=“loud-link-click”></div>
+<div class=“loud-link-hover” src-data=“sound”></div>
 ```
 
 ------------------------
