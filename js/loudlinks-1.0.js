@@ -1,5 +1,5 @@
 var loudlinks = (function(){
-  
+
   // Create audio element and make it awesome
   var generateAudioElement = (function() {
     var audioPlayer = document.createElement('audio'); // create the audio element

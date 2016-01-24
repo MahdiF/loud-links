@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Loud Links - A simple tiny Javascript library to add interaction sounds to your website.</title>
+	<link href="style.css" rel="stylesheet">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="HandheldFriendly" content="true" />
+	<meta charset="UTF-8">
+
+	<meta name="description" content="A simple tiny Javascript library to add interaction sounds to your website." />
+
+	<!-- Open Graph stuff -->
+	<meta property="og:title" content="Loud Links" />
+	<meta property="og:site_name" content="Loud Links" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://loudlinks.rocks/" />
+	<meta property="og:image" content="http://loudlinks.rocks/images/im-og_image.png" />
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/favicons/favicon-194x194.png" sizes="194x194">
+	<link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/favicons/manifest.json">
+	<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#0ba1aa">
+	<link rel="shortcut icon" href="/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
+	<meta name="msapplication-config" content="/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
+
+	<!-- Google Analytics -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-3416596-18', 'auto');
+	  ga('send', 'pageview');
+	</script>
+
+</head>
+<body>
+	<header>
+		<div class="intro-cont">
+			<div class="content-wrapper">
+				<div class="logo-menu-cont">
+					<a class="logo-cont loud-link-hover" data-src="ding" href="http://loudlinks.rocks/" target="_blank"></a>
+					<nav>
+						<ul class="nav-cont">
+							<li><a href="#examples">Examples</a></li>
+							<li><a href="#usage">Usage</a></li>
+							<li><a href="https://github.com/mahdif/loud-links/" class="loud-link-hover" data-src="yeah-baby">View on GitHub</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="content-wrapper-small">
+				<h1 class="main-heading">Loud links</h1>
+				<h2 class="secondary-heading">A simple tiny Javascript library to add interaction sounds to your website.</h2>
+				<a class="main-button download-button loud-link-click" data-src="success" href="https://mahdif.github.io/loud-links/loudlinks-1.0.min.js" target="_blank">Download</a>
+				<label class="size-label">1.86 KB</label>
+			</div>
+		</div>
+	</header>
+	<div class="body-cont">
+		<div class="content-wrapper-small">
+			<p class="text-desc">
+				The library creates HTML5 audio element and uses it to play mp3/ogg audio files which is currently <a class="loud-link-hover" data-src="woohoo" href="http://caniuse.com/#feat=audio" target="_blank">supported</a> in all browsers.
+			</p>
+			<h2 class="section-heading" id="examples">Examples</h2>
+			<hr>
+			<div class="examples-cont">
+				<button class="main-button button-example loud-link-hover" data-src="shimmer-vibes" type="button" name="button">Hover over me</button>
+				<button class="main-button button-example loud-link-click" data-src="magic" type="button" name="button">Click me</button>
+				<figure class="picture-example">
+					<img src="images/cattoiletpaper.gif" class="loud-link-hover" data-src="cat-meow" alt="an awesome cat rolling toilet some paper" />
+				</figure>
+				<figcaption class="picture-caption">It works on anything, even on cat gifs!</figcaption>
+			</div>
+			<div class="usage-cont">
+				<h2 class="section-heading" id="usage">Usage</h2>
+				<hr>
+				<p>
+					It’s super simple, attach the library to your project and follow these 3 steps:
+				</p>
+				<h3 class="inline-heading">Step 1</h3>
+				<p>
+					At the root of your website directory create a folder named <strong>“sounds”</strong> with 2 more folders inside it with the names <strong>“mp3”</strong> &amp; <strong>“ogg”</strong>.
+				</p>
+				<img class="step1-image" src="images/sound-folders.png" alt="sound folders" />
+				<hr>
+				<h3 class="inline-heading">Step 2</h3>
+				<p>
+					Add the class <strong>“loud-link-hover”</strong> to any link/element that you want to give a sound on hover.
+				</p>
+				<div class="code-example">
+					<pre style="margin: 0; line-height: 125%"><span style="color: #bb0066; font-weight: bold">&lt;div</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">“loud-link-hover”</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/div&gt;</span></pre>
+				</div>
+				<p>
+					Or add the class  <strong>“loud-link-click”</strong> to any link/element that you want to give a sound on click.
+				</p>
+				<div class="code-example">
+					<pre style="margin: 0; line-height: 125%"><span style="color: #bb0066; font-weight: bold">&lt;div</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">“loud-link-click”</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/div&gt;</span></pre>
+				</div>
+				<hr>
+				<h3 class="inline-heading">Step 3</h3>
+				<p>
+					Add the attribute <strong>“src-data”</strong> to the element &amp; write in it the name of your sound without the extension.
+				</p>
+				<div class="code-example">
+					<pre style="margin: 0; line-height: 125%"><span style="color: #bb0066; font-weight: bold">&lt;div</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">“loud-link-hover”</span> <span style="color: #336699">src-data=</span><span style="color: #dd2200; background-color: #fff0f0">“sound”</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/div&gt;</span></pre>
+				</div>
+				<hr>
+				<div class="done-cont">
+					<h2 class="done-heading">Done &amp; Done</h2>
+					<a class="main-button button-example loud-link-click" data-src="success" href="https://mahdif.github.io/loud-links/loudlinks-1.0.min.js" target="_blank">Download</a>
+					<a class="link-example loud-link-hover" data-src="yeah-baby" href="https://github.com/mahdif/loud-links/" target="_blank">View on GitHub</a>
+
+					<hr>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="content-wrapper-small">
+			<div class="footer-links-cont">
+				<p>
+					Made with 💩 by <a href="http://mahdif.com" class="loud-link-hover" data-src="fart">Mahdi</a>.
+				</p>
+				<p class="margin-bottom-small">
+					Let's be friends, follow me <a href="https://twitter.com/mahdif">@mahdif</a> &amp; checkout my other <a href="http://mahdif.com/lab/">experiments</a>.
+				</p>
+				<p>
+					Special thanks to <a href="https://twitter.com/smorkolama">Benjamin</a> for letting me rubber-duck him, and for being an awesome friend.
+					<br><br>
+					Used <a href="http://hilite.me">hilite.me</a> to convert my code snippets.
+				</p>
+			</div>
+		</div>
+	</footer>
+	<script src="js/loudlinks-1.0.js"></script>
+</body>
+</html>

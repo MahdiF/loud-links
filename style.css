@@ -1,0 +1,374 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Roboto','Helvetica Neue', 'Lucida Grande', sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased; /* sexifying the fonts */
+  color: #222222;
+}
+
+a {
+  text-decoration: none;
+  color: #0a8da3;
+}
+
+h1 {
+  font-size: 68px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h1,h2,h3 {
+  font-weight: 300;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding: 0;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body, h1,h2,h3, p, ul, li{
+	margin:0;
+	padding:0;
+}
+
+strong {
+  font-weight: 400;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*--------------------------*/
+.content-wrapper {
+  width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.content-wrapper-small {
+  width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.content-wrapper::after, .content-wrapper-small::after {
+  content: "";
+  clear: both;
+}
+/*--------------------------*/
+header {
+  background-image: linear-gradient(0deg, #00FFDB 0%, #14507F 100%);
+  background-image: -webkit-linear-gradient(bottom, #00FFDB 0%, #14507F 100%);
+
+  padding: 0 0 100px;
+  text-align: center;
+}
+
+.logo-menu-cont {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  overflow: auto;
+  margin-bottom: 100px;
+
+  opacity: 0;
+  animation: fadeInAnimation 0.5s ease-in-out 1s forwards;
+}
+
+.logo-cont{
+  background: url('images/logo.svg') center no-repeat;
+  width: 82px;
+  height: 32px;
+  display: inline-block;
+  float: left;
+}
+
+nav {
+  display: inline-block;
+  text-align: right;
+  float: right;
+  line-height: 32px;
+}
+
+.nav-cont {
+}
+
+.nav-cont li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 0 0 30px;
+}
+.nav-cont li a {
+  display: block;
+  color: rgba(255,255,255,0.8);
+}
+
+.nav-cont li a:hover {
+  color: rgba(255,255,255,1);
+  text-decoration: none;
+}
+
+.main-heading, .secondary-heading {
+  color: rgba(255, 255, 255, 1);
+}
+.main-heading {
+  margin: 0 0 2px 0;
+  color: rgba(255, 255, 255, 1);
+
+  opacity: 0;
+  animation: fadeInAnimation 0.5s ease-in-out 0.2s forwards;
+}
+.secondary-heading {
+  margin: 0 0 100px 0;
+
+  opacity: 0;
+  animation: fadeInAnimation 0.5s ease-in-out 0.4s forwards;
+}
+
+.main-button {
+  display: block;
+  border: none;
+  padding: 15px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+  font-size: 24px;
+  width: 50%;
+}
+.main-button:active {
+  padding: 18px 0 12px 0;
+}
+
+.download-button {
+  background: rgba(255,255,255,1);
+  margin: 0 auto 10px;
+  box-shadow: 0 3px rgba(0,0,0,0.1);
+  color: rgba(0,0,0,0.9);
+  font-weight: 400;
+
+  opacity: 0;
+  animation: fadeInAnimation 0.5s ease-in-out 0.8s forwards;
+}
+.download-button:hover {
+  text-decoration: none;
+  background: #feeff4;
+}
+.download-button:active {
+  box-shadow: none;
+  background: rgba(0,0,0, 0.4);
+  color: white;
+}
+
+.size-label {
+  color: rgba(0,0,0,0.6);
+
+  opacity: 0;
+  animation: fadeInAnimation 0.5s ease-in-out 1s forwards;
+}
+.size-label:hover {
+  color: rgba(0,0,0,0.8);
+}
+
+.body-cont {
+  margin: 50px 0;
+
+  opacity: 0;
+  animation: fadeInAnimation 0.5s ease-in-out 1.5s forwards;
+}
+
+.text-desc {
+}
+
+.section-heading {
+  color: rgba(0,0,0,0.5);
+  margin: 100px 0 0 0;
+}
+
+.examples-cont {
+  text-align: center;
+}
+
+.button-example {
+  margin: 20px auto;
+  background: #0BA1BB;
+  color: white;
+  box-shadow: 0 3px #0a8da3;
+}
+
+.button-example:hover {
+  background: #0892aa;
+  text-decoration: none;
+}
+
+.button-example:active {
+  background: #0a8da3;
+}
+
+.link-example {
+  display: block;
+  margin: 40px 0;
+}
+
+.picture-example {
+  margin: 40px auto 0;
+}
+
+.picture-caption {
+  font-size: 18px;
+  color: rgba(0,0,0,0.4);
+  margin: 10px 0 20px;
+}
+
+.inline-heading {
+  color: rgba(0,0,0,0.5);
+  margin: 40px 0 10px;
+}
+
+.step1-image {
+  margin-top: 20px;
+}
+
+.code-example {
+  background: #ffffff; overflow:auto; width:auto; padding:.2em .6em;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.done-cont {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  font-size: 15px;
+  padding: 30px 0;
+
+  opacity: 0;
+  animation: fadeInAnimation 0.5s ease-in-out 1.5s forwards;
+}
+footer a {
+  color:black;
+  font-weight: 400;
+}
+
+.done-heading {
+  color: rgba(0,0,0,0.2);
+  margin-top: 50px;
+}
+
+.margin-bottom-small {
+  margin-bottom: 20px;
+}
+
+.margin-bottom-big {
+  margin-bottom: 50px;
+}
+
+/*
+  Animation habibi
+*/
+@-webkit-keyframes fadeInAnimation {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes fadeInAnimation {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes fadeInAnimation {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeInAnimation {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+/* Make me responsive */
+@media screen and (max-width: 1020px){
+  .content-wrapper {
+    width: 100%;
+    padding: 0 20px;
+  }
+  .content-wrapper-small {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .main-button {
+    width: 40%;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 700px){
+  body {
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 46px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+  .body-cont {
+    margin: 20px 0;
+  }
+  .section-heading {
+    margin-top: 50px;
+  }
+  header {
+    padding-bottom: 50px;
+  }
+  .logo-menu-cont {
+    margin-bottom: 30px;
+  }
+  .logo-cont {
+    display: block;
+    margin: 0 auto 20px;
+    float: none;
+    background-size: 100px 400px;
+    width: 100px;
+    height: 40px;
+  }
+  nav {
+    float: none;
+    line-height: inherit;
+    text-align: center;
+    width: 100%;
+  }
+  .nav-cont li {
+    list-style: none;
+    display: inline-block;
+    margin: 5px 4px;
+  }
+  .secondary-heading {
+    margin-bottom: 30px;
+  }
+  .main-button {
+    width: 90%;
+    font-size: 18px;
+}
