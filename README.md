@@ -1,9 +1,10 @@
 # Loud Links
 The library creates HTML5 audio element and uses it to play mp3/ogg audio files which is currently [supported](http://caniuse.com/#feat=audio) in all browsers.
 
-## Usage
+# [Demo](http://loudlinks.rocks)
+# [Download](https://mahdif.github.io/loud-links/loudlinks-1.0.min.js)
 
-------------------------
+## Usage
 
 It’s super simple, attach the library to your project and follow these 3 steps:
 
