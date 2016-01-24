@@ -2,7 +2,7 @@
 The library creates HTML5 audio element and uses it to play mp3/ogg audio files which is currently [supported](http://caniuse.com/#feat=audio) in all browsers.
 
 # [Demo](http://loudlinks.rocks)
-# [Download](https://mahdif.github.io/loud-links/loudlinks-1.0.min.js)
+# [Download](https://loudlinks.rocks/js/loudlinks-1.0.min.js)
 
 
 ## Usage
@@ -45,4 +45,4 @@ Add the attribute **“src-data”** to the element & write in it the name of yo
 
 ## Done & Done
 # [Demo](http://loudlinks.rocks)
-# [Download](https://mahdif.github.io/loud-links/loudlinks-1.0.min.js)
+# [Download](https://loudlinks.rocks/js/loudlinks-1.0.min.js)
