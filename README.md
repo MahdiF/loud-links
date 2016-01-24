@@ -4,11 +4,12 @@ The library creates HTML5 audio element and uses it to play mp3/ogg audio files 
 # [Demo](http://loudlinks.rocks)
 # [Download](https://mahdif.github.io/loud-links/loudlinks-1.0.min.js)
 
+
 ## Usage
 
 It’s super simple, attach the library to your project and follow these 3 steps:
 
-#### Step 1
+### Step 1
 
 At the root of your website directory create a folder named **“sounds”** with 2 more folders inside it with the names **“mp3”** & **“ogg”**.
 
@@ -16,7 +17,7 @@ At the root of your website directory create a folder named **“sounds”** wit
 
 ------------------------
 
-#### Step 2
+### Step 2
 
 Add the class **“loud-link-hover”** to any link/element that you want to give a sound on hover.
 
@@ -31,7 +32,7 @@ Or add the class **“loud-link-click”** to any link/element that you want to 
 ```
 * * *
 
-#### Step 3
+### Step 3
 
 Add the attribute **“src-data”** to the element & write in it the name of your sound without the extension.
 
