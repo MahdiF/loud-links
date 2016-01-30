@@ -62,9 +62,9 @@
 					<a class="logo-cont loud-link-hover" data-src="ding" href="http://loudlinks.rocks/" target="_blank"></a>
 					<nav>
 						<ul class="nav-cont">
-							<li><a href="#examples">Examples</a></li>
-							<li><a href="#usage">Usage</a></li>
-							<li><a href="https://github.com/mahdif/loud-links/" class="loud-link-hover" data-src="yeah-baby">View on GitHub</a></li>
+							<li><a href="#examples" onclick="ga('send', 'event', 'View-Examples', 'View-Examples-Header');">Examples</a></li>
+							<li><a href="#usage" onclick="ga('send', 'event', 'View-Usage', 'View-Usage-Header');">Usage</a></li>
+							<li><a href="https://github.com/mahdif/loud-links/" class="loud-link-hover" data-src="yeah-baby" onclick="ga('send', 'event', 'view-on-GitHub', 'View-on-GitHub-Header');">View on GitHub</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -128,9 +128,8 @@
 				<hr>
 				<div class="done-cont">
 					<h2 class="done-heading">Done &amp; Done</h2>
-					<a class="main-button button-example loud-link-click" data-src="success" href="https://loudlinks.rocks/js/loudlinks-1.0.min.js" target="_blank" onclick="ga('send', 'event', 'download-library', 'Download-atFooter');">Download</a>
-					<a class="link-example loud-link-hover" data-src="yeah-baby" href="https://github.com/mahdif/loud-links/" target="_blank">View on GitHub</a>
-
+					<a class="main-button button-example loud-link-click" data-src="success" href="https://loudlinks.rocks/js/loudlinks-1.0.min.js" target="_blank" onclick="ga('send', 'event', 'download-library', 'Download-Footer-Link');">Download</a>
+					<a class="link-example loud-link-hover" data-src="yeah-baby" href="https://github.com/mahdif/loud-links/" target="_blank" onclick="ga('send', 'event', 'view-on-GitHub', 'view-on-GitHub-Footer-link');">View on GitHub</a>
 					<hr>
 				</div>
 			</div>
@@ -140,10 +139,10 @@
 		<div class="content-wrapper-small">
 			<div class="footer-links-cont">
 				<p>
-					Made with 💩 by <a href="http://mahdif.com" class="loud-link-hover" data-src="fart">Mahdi</a>.
+					Made with 💩 by <a href="http://mahdif.com" class="loud-link-hover" data-src="fart" onclick="ga('send', 'event', 'go-to-my-Website', 'MahdifCom');">Mahdi</a>.
 				</p>
 				<p class="margin-bottom-small">
-					Let's be friends, follow me <a href="https://twitter.com/mahdif">@mahdif</a> &amp; checkout my other <a href="http://mahdif.com/lab/">experiments</a>.
+					Let's be friends, follow me <a href="https://twitter.com/mahdif" onclick="ga('send', 'event', 'go-to-my-Tiwtter', 'mahdif-Twitter');">@mahdif</a> &amp; checkout my other <a href="http://mahdif.com/lab/" onclick="ga('send', 'event', 'View-Other-Experiments', 'View-Other-Experiments-Footer');">experiments</a>.
 				</p>
 				<p>
 					Special thanks to <a href="https://twitter.com/smorkolama">Benjamin</a> for letting me rubber-duck him, and for being an awesome friend.
