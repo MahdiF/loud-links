@@ -72,7 +72,7 @@
 			<div class="content-wrapper-small">
 				<h1 class="main-heading">Loud links</h1>
 				<h2 class="secondary-heading">A simple tiny Javascript library to add interaction sounds to your website.</h2>
-				<a class="main-button download-button loud-link-click" data-src="success" href="https://loudlinks.rocks/js/loudlinks-1.0.min.js" target="_blank" onclick="ga('send', 'event', 'download-library', 'Download');">Download</a>
+				<a id="download-button" class="main-button download-button loud-link-click" data-src="success" href="https://loudlinks.rocks/js/loudlinks-1.0.min.js" target="_blank">Download</a>
 				<label class="size-label">1.86 KB</label>
 			</div>
 		</div>
@@ -154,5 +154,10 @@
 		</div>
 	</footer>
 	<script src="js/loudlinks-1.0.min.js"></script>
+	<script type="text/javascript">
+		document.getElementById('download-button').onclick = function() {
+			ga('send', 'event', 'download-library', 'Download');
+		}
+	</script>
 </body>
 </html>
