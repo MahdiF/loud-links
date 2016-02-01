@@ -1,13 +1,14 @@
-var loudlinks = (function(){
-  
+var loudlinks = (function(document) {
+
   // Create audio element and make it awesome
   var generateAudioElement = (function() {
     var audioPlayer = document.createElement('audio'); // create the audio element
+    var source1 = document.createElement('source'); // creating a source element
+    var source2 = document.createElement('source');
+
     audioPlayer.id = 'loudLinksAudioPlayer'; // give the audio element the proper id
     audioPlayer.preload = true; // audio element preload attribute
 
-    var source1 = document.createElement('source'); // creating a source element
-    var source2 = document.createElement('source');
     source1.id = 'mp3Source';
     source2.id = 'oggSource';
 
@@ -42,6 +43,7 @@ var loudlinks = (function(){
     var audioSrc = element.getAttribute('data-src'); // getting the sound name from the data-src Attribute
     var soundMp3Link = mp3Location + audioSrc + '.mp3'; // settnig the mp3 sound in a variable
     var soundOggLink = oggLocation + audioSrc + '.ogg'; // settnig the ogg sound in a variable
+
     mp3Source.setAttribute('src', soundMp3Link); // putting the mp3 sound link in the src Attribute of <source>
     oggSource.setAttribute('src', soundOggLink); // putting the mp3 sound link in the src Attribute of <source>
 
@@ -56,6 +58,7 @@ var loudlinks = (function(){
   // checking if the data-src Attribute isn't empty
   checkAttribute = function(element) {
     var audioSrc = element.getAttribute('data-src'); // getting the sound name from the data-src Attribute
+
     if (audioSrc) {
       return true;
     } else {
@@ -106,20 +109,25 @@ var loudlinks = (function(){
 
   // Go crazy! Scan all the links and see if they have the 'data-src' Attribute and do the events
   runTrackers = function() {
-    for (var i = 0; i < LoudLinksHover.length; i++) { // Hover
+    var i;
+    var loudLinksHoverLength = LoudLinksHover.length;
+    var loudLinksClickLength = LoudLinksClick.length;
+
+    for (i = 0; i < loudLinksHoverLength; i++) { // Hover
       trackHover(LoudLinksHover[i]);
     }
-    for (var i = 0; i < LoudLinksClick.length; i++) { // Click
+
+    for (i = 0; i < loudLinksClickLength; i++) { // Click
       trackClick(LoudLinksClick[i]);
     }
   }
 
   // Check if the browser supports audio then get crazy!
-  if (checkAudioSupport()){
+  if (checkAudioSupport()) {
     console.log('Audio works like a charm 👍');
     runTrackers();
   } else {
     console.log('Oh man 😩! \nI\'m sorry but your browsers doesn\'t support awesomeness.')
   }
 
-})();
+})(document);
