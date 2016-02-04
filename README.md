@@ -14,7 +14,7 @@ Include the minified Javascript right before the `</body>` tag of your page.
 
 ```html
 ...
-<script src="js/loudlinks-1.0.min.js"></script>
+<script src="js/loudlinks.min.js"></script>
 </body>
 </html>
 ```
