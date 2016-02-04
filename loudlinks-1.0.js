@@ -1,5 +1,13 @@
 var loudlinks = (function(document) {
-
+  
+  // Check if the browser supports audio then get crazy, or exit out if no support.
+  if ( !document.createElement('audio').canPlayType ) {
+    console.log('Oh man 😩! \nI\'m sorry but your browsers doesn\'t support awesomeness.');
+    return;
+  } else {
+    console.log('Audio works like a charm 👍');
+  }
+  
   // Create audio element and make it awesome
   var audioPlayer = (function() {
     var audioPlayer = document.createElement('audio'); // create the audio element
@@ -34,10 +42,6 @@ var loudlinks = (function(document) {
   var oggSource = document.getElementById('oggSource');
   // ------------------------------------------------------------
 
-  // check if the browser supports Audio ¯\_(ツ)_/¯
-  checkAudioSupport = function() {
-    return !!document.createElement('audio').canPlayType;
-  }
 
   // get the audio source and appending it to <audio>
   getAudioSource = function(element) {
@@ -109,26 +113,16 @@ var loudlinks = (function(document) {
   }
 
   // Go crazy! Scan all the links and see if they have the 'data-src' Attribute and do the events
-  runTrackers = function() {
-    var i;
-    var loudLinksHoverLength = LoudLinksHover.length;
-    var loudLinksClickLength = LoudLinksClick.length;
+  var i;
+  var loudLinksHoverLength = LoudLinksHover.length;
+  var loudLinksClickLength = LoudLinksClick.length;
 
-    for (i = 0; i < loudLinksHoverLength; i++) { // Hover
-      trackHover(LoudLinksHover[i]);
-    }
-
-    for (i = 0; i < loudLinksClickLength; i++) { // Click
-      trackClick(LoudLinksClick[i]);
-    }
+  for (i = 0; i < loudLinksHoverLength; i++) { // Hover
+    trackHover(LoudLinksHover[i]);
   }
 
-  // Check if the browser supports audio then get crazy!
-  if (checkAudioSupport()) {
-    console.log('Audio works like a charm 👍');
-    runTrackers();
-  } else {
-    console.log('Oh man 😩! \nI\'m sorry but your browsers doesn\'t support awesomeness.')
+  for (i = 0; i < loudLinksClickLength; i++) { // Click
+    trackClick(LoudLinksClick[i]);
   }
-
+  
 })(document);
