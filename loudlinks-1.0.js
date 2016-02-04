@@ -1,128 +1,113 @@
 var loudlinks = (function(document) {
-  
+
+  // Avoid `console` errors in browsers lacking a console.
+  var console = window.console || {};
+  console.log = console.log || function(){};
+  console.error = console.error || console.log;
+
   // Check if the browser supports audio then get crazy, or exit out if no support.
   if ( !document.createElement('audio').canPlayType ) {
-    console.log('Oh man 😩! \nI\'m sorry but your browsers doesn\'t support awesomeness.');
-    return;
+    console.error('Oh man 😩! \nYour browser doesn\'t support audio awesomeness.');
+    return function(){}; // return an empty function if `loudLinks` is called again.
   } else {
     console.log('Audio works like a charm 👍');
   }
-  
+
   // Create audio element and make it awesome
-  var audioPlayer = (function() {
-    var audioPlayer = document.createElement('audio'); // create the audio element
-    var source1 = document.createElement('source'); // creating a source element
-    var source2 = document.createElement('source');
+  var audioPlayer = document.createElement('audio'),
+      mp3Source = document.createElement('source'),
+      oggSource = document.createElement('source'),
+      eventsSet = false,
+      typeReg = /{{type}}/gi, // regEx for replacing {{type}} in the URLs
+      mp3Location = 'sounds/mp3/', // mp3 sounds location
+      oggLocation = 'sounds/ogg/'; // ogg sounds location
 
-    audioPlayer.id = 'loudLinksAudioPlayer'; // give the audio element the proper id
-    audioPlayer.preload = true; // audio element preload attribute
+  audioPlayer.setAttribute('preload',true); // audio element preload attribute
+  mp3Source.setAttribute('type','audio/mpeg');
+  oggSource.setAttribute('type','audio/ogg');
 
-    source1.id = 'mp3Source';
-    source2.id = 'oggSource';
+  // appending the sources to the player element
+  audioPlayer.appendChild(mp3Source);
+  audioPlayer.appendChild(oggSource);
 
-    audioPlayer.appendChild(source1); // appending the sources to the player element
-    audioPlayer.appendChild(source2);
-
-    document.body.appendChild(audioPlayer); // appending the player to the body
-    
-    return audioPlayer;
-  })();
-
-  // declaring stuff ---------------------------------------------
-  var audioSrc;
-  var soundMp3Link;
-  var soundOggLink;
-  var element;
-
-  var LoudLinksHover = document.getElementsByClassName('loud-link-hover');
-  var LoudLinksClick = document.getElementsByClassName('loud-link-click');
-  var mp3Location = 'sounds/mp3/'; // mp3 sounds location
-  var oggLocation = 'sounds/ogg/'; // ogg sounds location
-  var mp3Source = document.getElementById('mp3Source');
-  var oggSource = document.getElementById('oggSource');
-  // ------------------------------------------------------------
-
-
-  // get the audio source and appending it to <audio>
-  getAudioSource = function(element) {
-    var audioSrc = element.getAttribute('data-src'); // getting the sound name from the data-src Attribute
-    var soundMp3Link = mp3Location + audioSrc + '.mp3'; // settnig the mp3 sound in a variable
-    var soundOggLink = oggLocation + audioSrc + '.ogg'; // settnig the ogg sound in a variable
-
-    mp3Source.setAttribute('src', soundMp3Link); // putting the mp3 sound link in the src Attribute of <source>
-    oggSource.setAttribute('src', soundOggLink); // putting the mp3 sound link in the src Attribute of <source>
-
-    oggSource.addEventListener('error', function(){
-      console.log('😶 D\'oh! The ♪ ogg file URL is wrong!');
-    }, false);
-    mp3Source.addEventListener('error', function(){
-      console.log('😶 D\'oh! The ♪ mp3 file URL is wrong!');
-    }, false);
-  }
-
-  // checking if the data-src Attribute isn't empty
-  checkAttribute = function(element) {
-    var audioSrc = element.getAttribute('data-src'); // getting the sound name from the data-src Attribute
-
-    if (audioSrc) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  // appending audioplayer to body
+  document.body.appendChild(audioPlayer);
 
   // Play audio
-  playAudio = function(element) {
-    if (checkAttribute(element)) { // check if the data-src Attribute is filled (there is a name of a sound file)
-      getAudioSource(element);
-      audioPlayer.load();
-      audioPlayer.play();
+  function playAudio() {
+    // get the audio source and appending it to <audio>
+    var audioSrc = this.getAttribute('data-sound') || this.getAttribute('data-src'), // prefer `data-sound` attribute, but allow for backwards compatibility with `data-src`
+        soundMp3Link,
+        soundOggLink; // getting the sound name from the data-sound Attribute
+
+    // check if the data-sound Attribute is filled (there is a name of a sound file), or exit
+    if ( !audioSrc ) { return; }
+
+
+    if ( audioSrc.indexOf('{{type}}') > 0 ) {
+      // Replace all instances of '{{type}}' in the data-sound attribute to 'mp3' and 'ogg' respectfully.
+      // For example: http://loudlinks.rocks/sounds/{{type}}/magic.{{type}} becomes http://loudlinks.rocks/sounds/mp3/magic.mp3 and http://loudlinks.rocks/sounds/ogg/magic.ogg
+      soundMp3Link = audioSrc.replace(typeReg,'mp3');
+      soundOggLink = audioSrc.replace(typeReg,'ogg');
+    } else { // Allow for the original relative URLs
+      soundMp3Link = mp3Location + audioSrc + '.mp3';
+      soundOggLink = oggLocation + audioSrc + '.ogg';
     }
+
+    // Only set the `error` events once.
+    if ( !eventsSet ) {
+      eventsSet = true;
+      mp3Source.addEventListener('error', function(){
+        console.error('😶 D\'oh! The mp3 file URL is wrong!');
+      });
+      oggSource.addEventListener('error', function(){
+        console.error('😶 D\'oh! The ogg file URL is wrong!');
+      });
+    }
+
+    // Only reset `src` and reload if source is different
+    if ( mp3Source.src !== soundMp3Link || oggSource.src !== soundOggLink ) {
+      mp3Source.setAttribute('src', soundMp3Link); // putting the mp3 sound link in the src Attribute of <source>
+      oggSource.setAttribute('src', soundOggLink); // putting the mp3 sound link in the src Attribute of <source>
+      audioPlayer.load();
+    }
+
+    audioPlayer.currentTime = 0; // reset to beginning
+    audioPlayer.play();
   }
+
   // Stop audio
-  stopAudio = function() {
+  function stopAudio() {
     audioPlayer.pause();
-    audioPlayer.currentTime = 0;
   }
 
-  // track the element to a certian action
-  trackHover = function(element) {
-    element.addEventListener('mouseover', function() { // play audio on hover
-      playAudio(element);
-    }, false);
-    // --- all below to stop the sound ---- //
-    element.addEventListener('mouseout', function() { // stop audio on mouse out
-      stopAudio();
-    }, false);
-    element.addEventListener('touchmove', function() { // stop audio on touch and move
-      stopAudio();
-    }, false);
-    element.addEventListener('click', function() { // stop audio on click
-      stopAudio();
-    }, false);
-    element.addEventListener('dblclick', function() { // stop audio on double click
-      stopAudio();
-    }, false);
+  // Add `hover` related event listeners
+  function trackHover(element) {
+    element.addEventListener('mouseover', playAudio); // play audio on hover
+    element.addEventListener('mouseout', stopAudio); // stop audio on mouse out
+    element.addEventListener('touchmove', stopAudio); // stop audio on touch and move
+    element.addEventListener('click', stopAudio); // stop audio on click
   }
 
-  // track elements that'll have click event
-  trackClick = function(element) {
-    element.addEventListener('click', function() {
-      playAudio(element);
-    }, false);
+  // Add `click` event listeners
+  function trackClick(element) {
+    element.addEventListener('click', playAudio);
   }
 
-  // Go crazy! Scan all the links and see if they have the 'data-src' Attribute and do the events
-  var i;
-  var loudLinksHoverLength = LoudLinksHover.length;
-  var loudLinksClickLength = LoudLinksClick.length;
+  // Go crazy! Scan all the links and see if they have the 'data-sound' Attribute and attach the events
+  function loudlinks(){
+    var hoverLinks = document.getElementsByClassName('loud-link-hover'),
+        clickLinks = document.getElementsByClassName('loud-link-click'),
+        hoverLength = hoverLinks.length,
+        clickLength = clickLinks.length,
+        i;
 
-  for (i = 0; i < loudLinksHoverLength; i++) { // Hover
-    trackHover(LoudLinksHover[i]);
+    for (i = 0; i < hoverLength; i++) { trackHover(hoverLinks[i]); } // Hover
+    for (i = 0; i < clickLength; i++) { trackClick(clickLinks[i]); } // Click
+
+    return loudlinks;
   }
 
-  for (i = 0; i < loudLinksClickLength; i++) { // Click
-    trackClick(LoudLinksClick[i]);
-  }
-  
+  return loudlinks();
+
 })(document);
