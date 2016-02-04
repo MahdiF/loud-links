@@ -1,7 +1,7 @@
 var loudlinks = (function(document) {
 
   // Create audio element and make it awesome
-  var generateAudioElement = (function() {
+  var audioPlayer = (function() {
     var audioPlayer = document.createElement('audio'); // create the audio element
     var source1 = document.createElement('source'); // creating a source element
     var source2 = document.createElement('source');
@@ -16,6 +16,8 @@ var loudlinks = (function(document) {
     audioPlayer.appendChild(source2);
 
     document.body.appendChild(audioPlayer); // appending the player to the body
+    
+    return audioPlayer;
   })();
 
   // declaring stuff ---------------------------------------------
@@ -26,7 +28,6 @@ var loudlinks = (function(document) {
 
   var LoudLinksHover = document.getElementsByClassName('loud-link-hover');
   var LoudLinksClick = document.getElementsByClassName('loud-link-click');
-  var audioPlayer = document.getElementById('loudLinksAudioPlayer');
   var mp3Location = 'sounds/mp3/'; // mp3 sounds location
   var oggLocation = 'sounds/ogg/'; // ogg sounds location
   var mp3Source = document.getElementById('mp3Source');
