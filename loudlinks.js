@@ -1,3 +1,4 @@
+/*! loudlinks, v1.1 https://github.com/MahdiF/loud-links @preserve */
 var loudlinks = (function(document) {
 
   // Avoid `console` errors in browsers lacking a console.
