@@ -63,7 +63,7 @@
 					<nav>
 						<ul class="nav-cont">
 							<li><a href="#examples" onclick="ga('send', 'event', 'View-Examples', 'View-Examples-Header');">Examples</a></li>
-							<li><a href="#usage" onclick="ga('send', 'event', 'View-Usage', 'View-Usage-Header');">Usage</a></li>
+							<li><a href="https://github.com/MahdiF/loud-links#usage" onclick="ga('send', 'event', 'View-Usage', 'View-Usage-Header');">Usage</a></li>
 							<li><a href="https://github.com/mahdif/loud-links/" class="loud-link-hover" data-src="yeah-baby" onclick="ga('send', 'event', 'view-on-GitHub', 'View-on-GitHub-Header');">View on GitHub</a></li>
 						</ul>
 					</nav>
@@ -72,7 +72,7 @@
 			<div class="content-wrapper-small">
 				<h1 class="main-heading">Loud links</h1>
 				<h2 class="secondary-heading">A simple tiny Javascript library to add interaction sounds to your website.</h2>
-				<a class="main-button download-button loud-link-click" data-src="success" href="https://loudlinks.rocks/js/loudlinks-1.0.min.js" target="_blank" onclick="ga('send', 'event', 'download-library', 'Download');">Download</a>
+				<a class="main-button download-button loud-link-click" data-src="success" href="https://loudlinks.rocks/js/loudlinks.min.js" target="_blank" onclick="ga('send', 'event', 'download-library', 'Download');">Download</a>
 				<label class="size-label">1.86 KB</label>
 			</div>
 		</div>
@@ -92,46 +92,11 @@
 				</figure>
 				<figcaption class="picture-caption">It works on anything, even on cat gifs!</figcaption>
 			</div>
-			<div class="usage-cont">
-				<h2 class="section-heading" id="usage">Usage</h2>
+			<hr>
+			<div class="done-cont">
+				<a class="link-example loud-link-hover" data-src="yeah-baby" href="https://github.com/mahdif/loud-links/" target="_blank" onclick="ga('send', 'event', 'view-on-GitHub', 'view-on-GitHub-Footer-link');">View on GitHub</a>
+				<a class="main-button button-example loud-link-click" data-src="success" href="https://loudlinks.rocks/js/loudlinks-1.0.min.js" target="_blank" onclick="ga('send', 'event', 'download-library', 'Download-Footer-Link');">Download</a>
 				<hr>
-				<p>
-					It’s super simple, attach the library to your project and follow these 3 steps:
-				</p>
-				<h3 class="inline-heading">Step 1</h3>
-				<p>
-					At the root of your website directory create a folder named <strong>“sounds”</strong> with 2 more folders inside it with the names <strong>“mp3”</strong> &amp; <strong>“ogg”</strong>.
-				</p>
-				<img class="step1-image" src="images/sound-folders.png" alt="sound folders" />
-				<hr>
-				<h3 class="inline-heading">Step 2</h3>
-				<p>
-					Add the class <strong>“loud-link-hover”</strong> to any link/element that you want to give a sound on hover.
-				</p>
-				<div class="code-example">
-					<pre style="margin: 0; line-height: 125%"><span style="color: #bb0066; font-weight: bold">&lt;div</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">“loud-link-hover”</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/div&gt;</span></pre>
-				</div>
-				<p>
-					Or add the class  <strong>“loud-link-click”</strong> to any link/element that you want to give a sound on click.
-				</p>
-				<div class="code-example">
-					<pre style="margin: 0; line-height: 125%"><span style="color: #bb0066; font-weight: bold">&lt;div</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">“loud-link-click”</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/div&gt;</span></pre>
-				</div>
-				<hr>
-				<h3 class="inline-heading">Step 3</h3>
-				<p>
-					Add the attribute <strong>“src-data”</strong> to the element &amp; write in it the name of your sound without the extension.
-				</p>
-				<div class="code-example">
-					<pre style="margin: 0; line-height: 125%"><span style="color: #bb0066; font-weight: bold">&lt;div</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">“loud-link-hover”</span> <span style="color: #336699">data-src=</span><span style="color: #dd2200; background-color: #fff0f0">“sound”</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/div&gt;</span></pre>
-				</div>
-				<hr>
-				<div class="done-cont">
-					<h2 class="done-heading">Done &amp; Done</h2>
-					<a class="main-button button-example loud-link-click" data-src="success" href="https://loudlinks.rocks/js/loudlinks-1.0.min.js" target="_blank" onclick="ga('send', 'event', 'download-library', 'Download-Footer-Link');">Download</a>
-					<a class="link-example loud-link-hover" data-src="yeah-baby" href="https://github.com/mahdif/loud-links/" target="_blank" onclick="ga('send', 'event', 'view-on-GitHub', 'view-on-GitHub-Footer-link');">View on GitHub</a>
-					<hr>
-				</div>
 			</div>
 		</div>
 	</div>
@@ -152,6 +117,6 @@
 			</div>
 		</div>
 	</footer>
-	<script src="js/loudlinks-1.0.min.js"></script>
+	<script src="js/loudlinks.min.js"></script>
 </body>
 </html>

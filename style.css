@@ -57,6 +57,11 @@ img {
   max-width: 100%;
 }
 
+code {
+  background: #eeeeee;
+  padding: 0 5px;
+}
+
 /*--------------------------*/
 .content-wrapper {
   width: 1000px;
@@ -188,7 +193,7 @@ nav {
 }
 
 .body-cont {
-  margin: 50px 0;
+  margin: 50px 0 0 0;
 
   opacity: 0;
   animation: fadeInAnimation 0.5s ease-in-out 1.5s forwards;
@@ -246,12 +251,6 @@ nav {
   margin-top: 20px;
 }
 
-.code-example {
-  background: #ffffff; overflow:auto; width:auto; padding:.2em .6em;
-  margin: 20px 0;
-  font-size: 18px;
-}
-
 .done-cont {
   text-align: center;
 }
@@ -269,17 +268,8 @@ footer a {
   font-weight: 400;
 }
 
-.done-heading {
-  color: rgba(0,0,0,0.2);
-  margin-top: 50px;
-}
-
 .margin-bottom-small {
   margin-bottom: 20px;
-}
-
-.margin-bottom-big {
-  margin-bottom: 50px;
 }
 
 /*
@@ -335,7 +325,7 @@ footer a {
     font-size: 18px;
   }
   .body-cont {
-    margin: 20px 0;
+    margin: 20px 0 0 0;
   }
   .section-heading {
     margin-top: 50px;
