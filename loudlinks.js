@@ -84,8 +84,8 @@ var loudlinks = (function(document) {
 
   // Add `hover` related event listeners
   function trackHover(element) {
-    element.addEventListener('mouseover', playAudio); // play audio on hover
-    element.addEventListener('mouseout', stopAudio); // stop audio on mouse out
+    element.addEventListener('mouseenter', playAudio); // play audio on hover
+    element.addEventListener('mouseleave', stopAudio); // stop audio on mouse out
     element.addEventListener('touchmove', stopAudio); // stop audio on touch and move
     element.addEventListener('click', stopAudio); // stop audio on click
   }
