@@ -36,3 +36,6 @@ Add the attribute **data-sound”** to the element with absolute URL of your sou
 <div class=“loud-link-hover” data-sound="http://example.com/audio/noise.{{type}}"> ... </div> <!-- For absolute URLs, {{type}} will be replaced with '.mp3' and '.ogg' -->
 <div class=“loud-link-hover” data-sound="noise"> ... </div> <!-- Look for /sounds/mp3/noise.mp3 and /sounds/ogg/noise.ogg at the root of your website directory. -->
 ```
+
+## License
+See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
