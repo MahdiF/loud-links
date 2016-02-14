@@ -1,4 +1,4 @@
-/*! loudlinks, v1.1 https://github.com/MahdiF/loud-links @preserve */
+/*! loudlinks, v1.2 https://github.com/MahdiF/loud-links @preserve */
 var loudlinks = (function(document) {
 
   // Avoid `console` errors in browsers lacking a console.
@@ -26,6 +26,7 @@ var loudlinks = (function(document) {
   audioPlayer.setAttribute('preload',true); // audio element preload attribute
   mp3Source.setAttribute('type','audio/mpeg');
   oggSource.setAttribute('type','audio/ogg');
+  audioPlayer.setAttribute('controls',true);
 
   // appending the sources to the player element
   audioPlayer.appendChild(mp3Source);
@@ -73,13 +74,13 @@ var loudlinks = (function(document) {
       audioPlayer.load();
     }
 
-    audioPlayer.currentTime = 0; // reset to beginning
     audioPlayer.play();
   }
 
   // Stop audio
   function stopAudio() {
     audioPlayer.pause();
+    audioPlayer.currentTime = 0; // reset to beginning
   }
 
   // Add `hover` related event listeners
