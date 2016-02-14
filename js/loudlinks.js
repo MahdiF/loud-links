@@ -26,7 +26,6 @@ var loudlinks = (function(document) {
   audioPlayer.setAttribute('preload',true); // audio element preload attribute
   mp3Source.setAttribute('type','audio/mpeg');
   oggSource.setAttribute('type','audio/ogg');
-  audioPlayer.setAttribute('controls',true);
 
   // appending the sources to the player element
   audioPlayer.appendChild(mp3Source);
