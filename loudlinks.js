@@ -20,8 +20,8 @@ var loudlinks = (function(document) {
       oggSource = document.createElement('source'),
       eventsSet = false,
       typeReg = /{{type}}/gi, // regEx for replacing {{type}} in the URLs
-      mp3Location = 'sounds/mp3/', // mp3 sounds location
-      oggLocation = 'sounds/ogg/'; // ogg sounds location
+      mp3Location = sounds_host + 'sounds/mp3/', // mp3 sounds location
+      oggLocation = sounds_host + 'sounds/ogg/'; // ogg sounds location
 
   audioPlayer.setAttribute('preload',true); // audio element preload attribute
   mp3Source.setAttribute('type','audio/mpeg');
