@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>Loud Links - A simple tiny Javascript library to add interaction sounds to your website.</title>
 	<link href="style.css" rel="stylesheet">
@@ -14,8 +15,8 @@
 	<meta property="og:title" content="Loud Links" />
 	<meta property="og:site_name" content="Loud Links" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="http://loudlinks.rocks/" />
-	<meta property="og:image" content="http://loudlinks.rocks/images/im-og_image.png" />
+	<meta property="og:url" content="https://mahdif.github.io/loud-links/" />
+	<meta property="og:image" content="https://mahdif.github.io/loud-links/images/im-og_image.png" />
 
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
@@ -44,27 +45,34 @@
 
 	<!-- Google Analytics -->
 	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-	  ga('create', 'UA-3416596-18', 'auto');
-	  ga('send', 'pageview');
+		ga('create', 'UA-3416596-18', 'auto');
+		ga('send', 'pageview');
 	</script>
 
 </head>
+
 <body>
 	<header>
 		<div class="intro-cont">
 			<div class="content-wrapper">
 				<div class="logo-menu-cont">
-					<a class="logo-cont loud-link-hover" data-src="ding" href="http://loudlinks.rocks/" target="_blank"></a>
+					<a class="logo-cont loud-link-hover" data-src="ding" href="https://mahdif.github.io/loud-links/"
+						target="_blank"></a>
 					<nav>
 						<ul class="nav-cont">
-							<li><a href="#examples" onclick="ga('send', 'event', 'View-Examples', 'View-Examples-Header');">Examples</a></li>
-							<li><a href="https://github.com/MahdiF/loud-links#usage" onclick="ga('send', 'event', 'View-Usage', 'View-Usage-Header');">Usage</a></li>
-							<li><a href="https://github.com/mahdif/loud-links/" class="loud-link-hover" data-src="yeah-baby" onclick="ga('send', 'event', 'view-on-GitHub', 'View-on-GitHub-Header');">View on GitHub</a></li>
+							<li><a href="#examples"
+									onclick="ga('send', 'event', 'View-Examples', 'View-Examples-Header');">Examples</a></li>
+							<li><a href="https://github.com/MahdiF/loud-links#usage"
+									onclick="ga('send', 'event', 'View-Usage', 'View-Usage-Header');">Usage</a></li>
+							<li><a href="https://github.com/mahdif/loud-links/" class="loud-link-hover" data-src="yeah-baby"
+									onclick="ga('send', 'event', 'view-on-GitHub', 'View-on-GitHub-Header');">View on GitHub</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -72,7 +80,9 @@
 			<div class="content-wrapper-small">
 				<h1 class="main-heading">Loud links</h1>
 				<h2 class="secondary-heading">A simple tiny Javascript library to add interaction sounds to your website.</h2>
-				<a class="main-button download-button loud-link-click" data-src="success" href="https://loudlinks.rocks/js/loudlinks.min.js" target="_blank" onclick="ga('send', 'event', 'download-library', 'Download');">Download</a>
+				<a class="main-button download-button loud-link-click" data-src="success"
+					href="https://raw.githubusercontent.com/MahdiF/loud-links/master/loudlinks.min.js" target="_blank"
+					onclick="ga('send', 'event', 'download-library', 'Download');">Download</a>
 				<label class="size-label">1.5 KB</label>
 			</div>
 		</div>
@@ -80,22 +90,31 @@
 	<div class="body-cont">
 		<div class="content-wrapper-small">
 			<p class="text-desc">
-				The library creates HTML5 audio element and uses it to play mp3/ogg audio files which is currently <a class="loud-link-hover" data-src="woohoo" href="http://caniuse.com/#feat=audio" target="_blank">supported</a> in all browsers.
+				The library creates HTML5 audio element and uses it to play mp3/ogg audio files which is currently <a
+					class="loud-link-hover" data-src="woohoo" href="http://caniuse.com/#feat=audio" target="_blank">supported</a>
+				in all browsers.
 			</p>
 			<h2 class="section-heading" id="examples">Examples</h2>
 			<hr>
 			<div class="examples-cont">
-				<button class="main-button button-example loud-link-hover" data-src="shimmer-vibes" type="button" name="button">Hover over me</button>
-				<button class="main-button button-example loud-link-click" data-src="magic" type="button" name="button">Click me</button>
+				<button class="main-button button-example loud-link-hover" data-src="shimmer-vibes" type="button"
+					name="button">Hover over me</button>
+				<button class="main-button button-example loud-link-click" data-src="magic" type="button" name="button">Click
+					me</button>
 				<figure class="picture-example">
-					<img src="images/cattoiletpaper.gif" class="loud-link-hover" data-src="cat-meow" alt="an awesome cat rolling toilet some paper" />
+					<img src="images/cattoiletpaper.gif" class="loud-link-hover" data-src="cat-meow"
+						alt="an awesome cat rolling toilet some paper" />
 				</figure>
 				<figcaption class="picture-caption">It works on anything, even on cat gifs!</figcaption>
 			</div>
 			<hr>
 			<div class="done-cont">
-				<a class="link-example loud-link-hover" data-src="yeah-baby" href="https://github.com/mahdif/loud-links/" target="_blank" onclick="ga('send', 'event', 'view-on-GitHub', 'view-on-GitHub-Footer-link');">View on GitHub</a>
-				<a class="main-button button-example loud-link-click" data-src="success" href="https://loudlinks.rocks/js/loudlinks.min.js" target="_blank" onclick="ga('send', 'event', 'download-library', 'Download-Footer-Link');">Download</a>
+				<a class="link-example loud-link-hover" data-src="yeah-baby" href="https://github.com/mahdif/loud-links/"
+					target="_blank" onclick="ga('send', 'event', 'view-on-GitHub', 'view-on-GitHub-Footer-link');">View on
+					GitHub</a>
+				<a class="main-button button-example loud-link-click" data-src="success"
+					href="https://raw.githubusercontent.com/MahdiF/loud-links/master/loudlinks.min.js" target="_blank"
+					onclick="ga('send', 'event', 'download-library', 'Download-Footer-Link');">Download</a>
 				<hr>
 			</div>
 		</div>
@@ -104,17 +123,23 @@
 		<div class="content-wrapper-small">
 			<div class="footer-links-cont">
 				<p>
-					Made with 💩 by <a href="http://mahdif.com" class="loud-link-hover" data-src="fart" onclick="ga('send', 'event', 'go-to-my-Website', 'MahdifCom');">Mahdi</a>.
+					Made with 💩 by <a href="http://mahdif.com" class="loud-link-hover" data-src="fart"
+						onclick="ga('send', 'event', 'go-to-my-Website', 'MahdifCom');">Mahdi</a>.
 				</p>
 				<p class="margin-bottom-small">
-					Let's be friends, follow me <a href="https://twitter.com/mahdif" onclick="ga('send', 'event', 'go-to-my-Tiwtter', 'mahdif-Twitter');">@mahdif</a> &amp; checkout my other <a href="http://mahdif.com/lab/" onclick="ga('send', 'event', 'View-Other-Experiments', 'View-Other-Experiments-Footer');">experiments</a>.
+					Let's be friends, follow me <a href="https://twitter.com/mahdif"
+						onclick="ga('send', 'event', 'go-to-my-Tiwtter', 'mahdif-Twitter');">@mahdif</a> &amp; checkout my other <a
+						href="http://mahdif.com/lab/"
+						onclick="ga('send', 'event', 'View-Other-Experiments', 'View-Other-Experiments-Footer');">experiments</a>.
 				</p>
 				<p>
-					Special thanks to <a href="https://twitter.com/smorkolama">Benjamin</a> for letting me rubber-duck him, and for being an awesome friend.
+					Special thanks to <a href="https://twitter.com/smorkolama">Benjamin</a> for letting me rubber-duck him, and
+					for being an awesome friend.
 				</p>
 			</div>
 		</div>
 	</footer>
 	<script src="js/loudlinks.min.js"></script>
 </body>
+
 </html>
